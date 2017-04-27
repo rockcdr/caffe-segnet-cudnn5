@@ -3,7 +3,7 @@
 
 #include "caffe/layers/bn_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
   template <typename Dtype>
   void BNLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,
       const vector<Blob<Dtype>*>& top) {
@@ -401,4 +401,4 @@ STUB_GPU(BNLayer);
 
   INSTANTIATE_CLASS(BNLayer);
   REGISTER_LAYER_CLASS(BN);
-}  // namespace caffe
+}  // namespace caffe8

@@ -8,7 +8,7 @@
 #include "caffe/layers/softmax_loss_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void SoftmaxWithLossLayer<Dtype>::LayerSetUp(
@@ -159,4 +159,4 @@ STUB_GPU(SoftmaxWithLossLayer);
 INSTANTIATE_CLASS(SoftmaxWithLossLayer);
 REGISTER_LAYER_CLASS(SoftmaxWithLoss);
 
-}  // namespace caffe
+}  // namespace caffe8

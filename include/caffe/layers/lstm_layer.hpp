@@ -12,7 +12,7 @@
 #include "caffe/net.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype> class RecurrentLayer;
 
@@ -149,6 +149,6 @@ class LSTMUnitLayer : public Layer<Dtype> {
   Blob<Dtype> X_acts_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_LSTM_LAYER_HPP_

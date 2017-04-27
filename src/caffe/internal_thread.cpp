@@ -4,7 +4,7 @@
 #include "caffe/internal_thread.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 InternalThread::~InternalThread() {
   StopInternalThread();
@@ -87,4 +87,4 @@ bool InternalThread::StartInternalThread2() {
   return true;
 }
 
-}  // namespace caffe
+}  // namespace caffe8

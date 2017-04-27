@@ -9,7 +9,7 @@
 #include "caffe/util/io.hpp"
 #include "caffe/util/upgrade_proto.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template<typename Dtype>
 void Solver<Dtype>::SetActionFunction(ActionCallback func) {
@@ -411,10 +411,10 @@ void Solver<Dtype>::Snapshot() {
   CHECK(Caffe::root_solver());
   string model_filename;
   switch (param_.snapshot_format()) {
-  case caffe::SolverParameter_SnapshotFormat_BINARYPROTO:
+  case caffe8::SolverParameter_SnapshotFormat_BINARYPROTO:
     model_filename = SnapshotToBinaryProto();
     break;
-  case caffe::SolverParameter_SnapshotFormat_HDF5:
+  case caffe8::SolverParameter_SnapshotFormat_HDF5:
     model_filename = SnapshotToHDF5();
     break;
   default:
@@ -444,7 +444,7 @@ void Solver<Dtype>::CheckSnapshotWritePermissions() {
 
 template <typename Dtype>
 string Solver<Dtype>::SnapshotFilename(const string extension) {
-  return param_.snapshot_prefix() + "_iter_" + caffe::format_int(iter_)
+  return param_.snapshot_prefix() + "_iter_" + caffe8::format_int(iter_)
     + extension;
 }
 
@@ -494,4 +494,4 @@ void Solver<Dtype>::UpdateSmoothedLoss(Dtype loss, int start_iter,
 
 INSTANTIATE_CLASS(Solver);
 
-}  // namespace caffe
+}  // namespace caffe8

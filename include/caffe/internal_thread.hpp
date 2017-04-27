@@ -9,7 +9,7 @@
  */
 namespace boost { class thread; }
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * Virtual class encapsulate boost::thread for use in base class
@@ -50,6 +50,6 @@ class InternalThread {
   shared_ptr<boost::thread> thread_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_INTERNAL_THREAD_HPP_

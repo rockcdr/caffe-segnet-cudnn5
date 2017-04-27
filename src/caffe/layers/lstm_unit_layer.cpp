@@ -5,7 +5,7 @@
 #include "caffe/layer.hpp"
 #include "caffe/layers/lstm_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 inline Dtype sigmoid(Dtype x) {
@@ -128,4 +128,4 @@ STUB_GPU(LSTMUnitLayer);
 INSTANTIATE_CLASS(LSTMUnitLayer);
 REGISTER_LAYER_CLASS(LSTMUnit);
 
-}  // namespace caffe
+}  // namespace caffe8

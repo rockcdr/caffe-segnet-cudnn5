@@ -12,7 +12,7 @@
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/util/format.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype> class RecurrentLayer;
 
@@ -182,6 +182,6 @@ class RecurrentLayer : public Layer<Dtype> {
   Blob<Dtype>* cont_input_blob_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_RECURRENT_LAYER_HPP_

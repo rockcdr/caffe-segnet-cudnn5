@@ -3,7 +3,7 @@
 
 #include "caffe/layers/cudnn_tanh_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void CuDNNTanHLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
@@ -61,5 +61,5 @@ void CuDNNTanHLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 
 INSTANTIATE_LAYER_GPU_FUNCS(CuDNNTanHLayer);
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif

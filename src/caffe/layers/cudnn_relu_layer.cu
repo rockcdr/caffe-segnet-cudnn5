@@ -3,7 +3,7 @@
 
 #include "caffe/layers/cudnn_relu_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void CuDNNReLULayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
@@ -70,5 +70,5 @@ void CuDNNReLULayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 
 INSTANTIATE_LAYER_GPU_FUNCS(CuDNNReLULayer);
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif

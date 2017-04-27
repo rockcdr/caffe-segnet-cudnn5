@@ -83,7 +83,7 @@ namespace {
   }
 }  // namespace
 
-namespace caffe {
+namespace caffe8 {
 
 SignalHandler::SignalHandler(SolverAction::Enum SIGINT_action,
                              SolverAction::Enum SIGHUP_action):
@@ -112,4 +112,4 @@ ActionCallback SignalHandler::GetActionFunction() {
   return boost::bind(&SignalHandler::CheckForSignals, this);
 }
 
-}  // namespace caffe
+}  // namespace caffe8

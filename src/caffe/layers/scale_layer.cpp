@@ -6,7 +6,7 @@
 #include "caffe/layers/scale_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void ScaleLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,
@@ -224,4 +224,4 @@ STUB_GPU(ScaleLayer);
 INSTANTIATE_CLASS(ScaleLayer);
 REGISTER_LAYER_CLASS(Scale);
 
-}  // namespace caffe
+}  // namespace caffe8

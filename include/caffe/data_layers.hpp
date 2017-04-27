@@ -17,7 +17,7 @@
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/util/db.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Provides base for data layers that feed blobs to the Net.
@@ -101,6 +101,6 @@ class DataLayer : public BasePrefetchingDataLayer<Dtype> {
   shared_ptr<db::Cursor> cursor_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_DATA_LAYERS_HPP_

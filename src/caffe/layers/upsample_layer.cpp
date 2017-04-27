@@ -5,7 +5,7 @@
 
 #include "caffe/layers/upsample_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void UpsampleLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,
@@ -142,4 +142,4 @@ STUB_GPU(UpsampleLayer);
 INSTANTIATE_CLASS(UpsampleLayer);
 REGISTER_LAYER_CLASS(Upsample);
 
-}  // namespace caffe
+}  // namespace caffe8

@@ -7,7 +7,7 @@
 #include "caffe/layers/softmax_loss_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {  
+namespace caffe8 {  
 
 template <typename Dtype>
 __global__ void SoftmaxLossForwardGPU(const int nthreads,
@@ -143,4 +143,4 @@ void SoftmaxWithLossLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 
 INSTANTIATE_LAYER_GPU_FUNCS(SoftmaxWithLossLayer);
 
-}  // namespace caffe
+}  // namespace caffe8

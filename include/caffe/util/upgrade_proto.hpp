@@ -5,7 +5,7 @@
 
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 // Return true iff the net is not the current version.
 bool NetNeedsUpgrade(const NetParameter& net_param);
@@ -83,6 +83,6 @@ bool UpgradeSolverAsNeeded(const string& param_file, SolverParameter* param);
 void ReadSolverParamsFromTextFileOrDie(const string& param_file,
                                        SolverParameter* param);
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif   // CAFFE_UTIL_UPGRADE_PROTO_H_

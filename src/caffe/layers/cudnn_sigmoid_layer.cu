@@ -3,7 +3,7 @@
 
 #include "caffe/layers/cudnn_sigmoid_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void CuDNNSigmoidLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
@@ -60,5 +60,5 @@ void CuDNNSigmoidLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 
 INSTANTIATE_LAYER_GPU_FUNCS(CuDNNSigmoidLayer);
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif

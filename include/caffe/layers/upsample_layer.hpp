@@ -12,7 +12,7 @@
 
 //#include "caffe/layers/upsample_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 
 template <typename Dtype>
@@ -59,6 +59,6 @@ class UpsampleLayer : public Layer<Dtype> {
 
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  

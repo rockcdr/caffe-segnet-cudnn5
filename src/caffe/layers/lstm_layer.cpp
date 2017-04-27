@@ -8,7 +8,7 @@
 #include "caffe/layers/lstm_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void LSTMLayer<Dtype>::RecurrentInputBlobNames(vector<string>* names) const {
@@ -241,4 +241,4 @@ void LSTMLayer<Dtype>::FillUnrolledNet(NetParameter* net_param) const {
 INSTANTIATE_CLASS(LSTMLayer);
 REGISTER_LAYER_CLASS(LSTM);
 
-}  // namespace caffe
+}  // namespace caffe8

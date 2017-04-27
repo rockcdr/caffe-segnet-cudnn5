@@ -13,7 +13,7 @@
 
 #include "caffe/test/test_caffe_main.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 void FillDatum(const int label, const int channels, const int height,
   const int width, const bool unique_pixels, Datum * datum) {
@@ -340,5 +340,5 @@ TYPED_TEST(DataTransformTest, TestMeanFile) {
   }
 }
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif  // USE_OPENCV

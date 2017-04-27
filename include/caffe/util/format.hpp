@@ -5,7 +5,7 @@
 #include <sstream>  // NOLINT(readability/streams)
 #include <string>
 
-namespace caffe {
+namespace caffe8 {
 
 inline std::string format_int(int n, int numberOfLeadingZeros = 0 ) {
   std::ostringstream s;

@@ -7,7 +7,7 @@
 #include "caffe/layers/recurrent_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void RecurrentLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
@@ -41,4 +41,4 @@ void RecurrentLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
 
 INSTANTIATE_LAYER_GPU_FORWARD(RecurrentLayer);
 
-}  // namespace caffe
+}  // namespace caffe8

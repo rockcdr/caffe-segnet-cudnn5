@@ -3,7 +3,7 @@
 
 #include "caffe/layers/bn_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
   template <typename Dtype>
   void BNLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
       const vector<Blob<Dtype>*>& top) {
@@ -304,4 +304,4 @@ namespace caffe {
   }
 
   INSTANTIATE_LAYER_GPU_FUNCS(BNLayer);
-}  // namespace caffe
+}  // namespace caffe8

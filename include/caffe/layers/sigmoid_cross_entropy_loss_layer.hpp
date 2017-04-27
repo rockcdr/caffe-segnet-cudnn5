@@ -10,7 +10,7 @@
 #include "caffe/layers/loss_layer.hpp"
 #include "caffe/layers/sigmoid_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Computes the cross-entropy (logistic) loss @f$
@@ -123,6 +123,6 @@ class SigmoidCrossEntropyLossLayer : public LossLayer<Dtype> {
   int outer_num_, inner_num_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_SIGMOID_CROSS_ENTROPY_LOSS_LAYER_HPP_

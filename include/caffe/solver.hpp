@@ -7,7 +7,7 @@
 #include "caffe/net.hpp"
 #include "caffe/solver_factory.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
   * @brief Enumeration of actions that a client of the Solver may request by
@@ -156,6 +156,6 @@ class WorkerSolver : public Solver<Dtype> {
   }
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_SOLVER_HPP_

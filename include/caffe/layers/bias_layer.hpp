@@ -7,7 +7,7 @@
 #include "caffe/layer.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Computes a sum of two input Blobs, with the shape of the latter Blob
@@ -49,6 +49,6 @@ class BiasLayer : public Layer<Dtype> {
 
 
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_BIAS_LAYER_HPP_

@@ -12,7 +12,7 @@
 
 #include "caffe/data_layers.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Provides data to the Net from HDF5 files.
@@ -57,6 +57,6 @@ class HDF5DataLayer : public Layer<Dtype> {
   std::vector<unsigned int> file_permutation_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_HDF5_DATA_LAYER_HPP_

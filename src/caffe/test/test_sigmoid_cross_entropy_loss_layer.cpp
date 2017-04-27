@@ -11,7 +11,7 @@
 #include "caffe/test/test_caffe_main.hpp"
 #include "caffe/test/test_gradient_check_util.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename TypeParam>
 class SigmoidCrossEntropyLossLayerTest : public MultiDeviceTest<TypeParam> {
@@ -145,4 +145,4 @@ TYPED_TEST(SigmoidCrossEntropyLossLayerTest, TestIgnoreGradient) {
 }
 
 
-}  // namespace caffe
+}  // namespace caffe8

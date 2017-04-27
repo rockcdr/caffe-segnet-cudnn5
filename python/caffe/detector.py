@@ -16,10 +16,10 @@ proposal mode is available at
 import numpy as np
 import os
 
-import caffe
+import caffe8
 
 
-class Detector(caffe.Net):
+class Detector(caffe8.Net):
     """
     Detector extends Net for windowed detection by a list of crops or
     selective search proposals.

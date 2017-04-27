@@ -2,7 +2,7 @@
 
 #include "caffe/layers/loss_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void LossLayer<Dtype>::LayerSetUp(
@@ -24,4 +24,4 @@ void LossLayer<Dtype>::Reshape(
 
 INSTANTIATE_CLASS(LossLayer);
 
-}  // namespace caffe
+}  // namespace caffe8

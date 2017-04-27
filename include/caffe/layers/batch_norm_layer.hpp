@@ -7,7 +7,7 @@
 #include "caffe/layer.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Normalizes the input to have 0-mean and/or unit (1) variance across
@@ -73,6 +73,6 @@ class BatchNormLayer : public Layer<Dtype> {
   Blob<Dtype> spatial_sum_multiplier_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_BATCHNORM_LAYER_HPP_

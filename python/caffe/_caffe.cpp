@@ -41,7 +41,7 @@
 
 namespace bp = boost::python;
 
-namespace caffe {
+namespace caffe8 {
 
 // For Python, for now, we'll just always use float as the type.
 typedef float Dtype;
@@ -276,7 +276,7 @@ void Solver_add_callback(Solver<Dtype> * solver, bp::object on_start,
 
 BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(SolveOverloads, Solve, 0, 1);
 
-BOOST_PYTHON_MODULE(_caffe) {
+BOOST_PYTHON_MODULE(_caffe8) {
   // below, we prepend an underscore to methods that will be replaced
   // in Python
 
@@ -424,4 +424,4 @@ BOOST_PYTHON_MODULE(_caffe) {
   import_array1();
 }
 
-}  // namespace caffe
+}  // namespace caffe8

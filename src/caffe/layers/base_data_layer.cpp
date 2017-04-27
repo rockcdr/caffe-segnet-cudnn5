@@ -5,7 +5,7 @@
 #include "caffe/util/io.hpp"
 //#include "caffe/layers/base_data_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 BaseDataLayer<Dtype>::BaseDataLayer(const LayerParameter& param)
@@ -87,4 +87,4 @@ STUB_GPU_FORWARD(BasePrefetchingDataLayer, Forward);
 INSTANTIATE_CLASS(BaseDataLayer);
 INSTANTIATE_CLASS(BasePrefetchingDataLayer);
 
-}  // namespace caffe
+}  // namespace caffe8

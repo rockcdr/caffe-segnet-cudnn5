@@ -15,15 +15,15 @@ namespace bp = boost::python;
 #include "caffe/caffe.hpp"
 #include "caffe/util/signal_handler.h"
 
-using caffe::Blob;
-using caffe::Caffe;
-using caffe::Net;
-using caffe::Layer;
-using caffe::Solver;
-using caffe::shared_ptr;
-using caffe::string;
-using caffe::Timer;
-using caffe::vector;
+using caffe8::Blob;
+using caffe8::Caffe;
+using caffe8::Net;
+using caffe8::Layer;
+using caffe8::Solver;
+using caffe8::shared_ptr;
+using caffe8::string;
+using caffe8::Timer;
+using caffe8::vector;
 using std::ostringstream;
 
 DEFINE_string(gpu, "",
@@ -57,7 +57,7 @@ DEFINE_string(sighup_effect, "snapshot",
 
 // A simple registry for caffe commands.
 typedef int (*BrewFunction)();
-typedef std::map<caffe::string, BrewFunction> BrewMap;
+typedef std::map<caffe8::string, BrewFunction> BrewMap;
 BrewMap g_brew_map;
 
 #define RegisterBrewFunction(func) \
@@ -71,7 +71,7 @@ class __Registerer_##func { \
 __Registerer_##func g_registerer_##func; \
 }
 
-static BrewFunction GetBrewFunction(const caffe::string& name) {
+static BrewFunction GetBrewFunction(const caffe8::string& name) {
   if (g_brew_map.count(name)) {
     return g_brew_map[name];
   } else {
@@ -109,15 +109,15 @@ static void get_gpus(vector<int>* gpus) {
 }
 
 // Parse phase from flags
-caffe::Phase get_phase_from_flags(caffe::Phase default_value) {
+caffe8::Phase get_phase_from_flags(caffe8::Phase default_value) {
   if (FLAGS_phase == "")
     return default_value;
   if (FLAGS_phase == "TRAIN")
-    return caffe::TRAIN;
+    return caffe8::TRAIN;
   if (FLAGS_phase == "TEST")
-    return caffe::TEST;
+    return caffe8::TEST;
   LOG(FATAL) << "phase must be \"TRAIN\" or \"TEST\"";
-  return caffe::TRAIN;  // Avoid warning
+  return caffe8::TRAIN;  // Avoid warning
 }
 
 // Parse stages from flags
@@ -139,8 +139,8 @@ int device_query() {
   vector<int> gpus;
   get_gpus(&gpus);
   for (int i = 0; i < gpus.size(); ++i) {
-    caffe::Caffe::SetDevice(gpus[i]);
-    caffe::Caffe::DeviceQuery();
+    caffe8::Caffe::SetDevice(gpus[i]);
+    caffe8::Caffe::DeviceQuery();
   }
   return 0;
 }
@@ -148,7 +148,7 @@ RegisterBrewFunction(device_query);
 
 // Load the weights from the specified caffemodel(s) into the train and
 // test nets.
-void CopyLayers(caffe::Solver<float>* solver, const std::string& model_list) {
+void CopyLayers(caffe8::Solver<float>* solver, const std::string& model_list) {
   std::vector<std::string> model_names;
   boost::split(model_names, model_list, boost::is_any_of(",") );
   for (int i = 0; i < model_names.size(); ++i) {
@@ -162,16 +162,16 @@ void CopyLayers(caffe::Solver<float>* solver, const std::string& model_list) {
 
 // Translate the signal effect the user specified on the command-line to the
 // corresponding enumeration.
-caffe::SolverAction::Enum GetRequestedAction(
+caffe8::SolverAction::Enum GetRequestedAction(
     const std::string& flag_value) {
   if (flag_value == "stop") {
-    return caffe::SolverAction::STOP;
+    return caffe8::SolverAction::STOP;
   }
   if (flag_value == "snapshot") {
-    return caffe::SolverAction::SNAPSHOT;
+    return caffe8::SolverAction::SNAPSHOT;
   }
   if (flag_value == "none") {
-    return caffe::SolverAction::NONE;
+    return caffe8::SolverAction::NONE;
   }
   LOG(FATAL) << "Invalid signal effect \""<< flag_value << "\" was specified";
 }
@@ -184,8 +184,8 @@ int train() {
       "but not both.";
   vector<string> stages = get_stages_from_flags();
 
-  caffe::SolverParameter solver_param;
-  caffe::ReadSolverParamsFromTextFileOrDie(FLAGS_solver, &solver_param);
+  caffe8::SolverParameter solver_param;
+  caffe8::ReadSolverParamsFromTextFileOrDie(FLAGS_solver, &solver_param);
 
   solver_param.mutable_train_state()->set_level(FLAGS_level);
   for (int i = 0; i < stages.size(); i++) {
@@ -195,7 +195,7 @@ int train() {
   // If the gpus flag is not provided, allow the mode and device to be set
   // in the solver prototxt.
   if (FLAGS_gpu.size() == 0
-      && solver_param.solver_mode() == caffe::SolverParameter_SolverMode_GPU) {
+      && solver_param.solver_mode() == caffe8::SolverParameter_SolverMode_GPU) {
       if (solver_param.has_device_id()) {
           FLAGS_gpu = "" +
               boost::lexical_cast<string>(solver_param.device_id());
@@ -228,12 +228,12 @@ int train() {
     Caffe::set_solver_count(gpus.size());
   }
 
-  caffe::SignalHandler signal_handler(
+  caffe8::SignalHandler signal_handler(
         GetRequestedAction(FLAGS_sigint_effect),
         GetRequestedAction(FLAGS_sighup_effect));
 
-  shared_ptr<caffe::Solver<float> >
-      solver(caffe::SolverRegistry<float>::CreateSolver(solver_param));
+  shared_ptr<caffe8::Solver<float> >
+      solver(caffe8::SolverRegistry<float>::CreateSolver(solver_param));
 
   solver->SetActionFunction(signal_handler.GetActionFunction());
 
@@ -245,7 +245,7 @@ int train() {
   }
 
   if (gpus.size() > 1) {
-    caffe::P2PSync<float> sync(solver, NULL, solver->param());
+    caffe8::P2PSync<float> sync(solver, NULL, solver->param());
     sync.Run(gpus);
   } else {
     LOG(INFO) << "Starting Optimization";
@@ -280,7 +280,7 @@ int test() {
     Caffe::set_mode(Caffe::CPU);
   }
   // Instantiate the caffe net.
-  Net<float> caffe_net(FLAGS_model, caffe::TEST, FLAGS_level, &stages);
+  Net<float> caffe_net(FLAGS_model, caffe8::TEST, FLAGS_level, &stages);
   caffe_net.CopyTrainedLayersFrom(FLAGS_weights);
   LOG(INFO) << "Running for " << FLAGS_iterations << " iterations.";
 
@@ -333,7 +333,7 @@ RegisterBrewFunction(test);
 // Time: benchmark the execution time of a model.
 int time() {
   CHECK_GT(FLAGS_model.size(), 0) << "Need a model definition to time.";
-  caffe::Phase phase = get_phase_from_flags(caffe::TRAIN);
+  caffe8::Phase phase = get_phase_from_flags(caffe8::TRAIN);
   vector<string> stages = get_stages_from_flags();
 
   // Set device id and mode
@@ -400,7 +400,7 @@ int time() {
   }
   LOG(INFO) << "Average time per layer: ";
   for (int i = 0; i < layers.size(); ++i) {
-    const caffe::string& layername = layers[i]->layer_param().name();
+    const caffe8::string& layername = layers[i]->layer_param().name();
     LOG(INFO) << std::setfill(' ') << std::setw(10) << layername <<
       "\tforward: " << forward_time_per_layer[i] / 1000 /
       FLAGS_iterations << " ms.";
@@ -435,12 +435,12 @@ int main(int argc, char** argv) {
       "  device_query    show GPU diagnostic information\n"
       "  time            benchmark model execution time");
   // Run tool or show usage.
-  caffe::GlobalInit(&argc, &argv);
+  caffe8::GlobalInit(&argc, &argv);
   if (argc == 2) {
 #ifdef WITH_PYTHON_LAYER
     try {
 #endif
-      return GetBrewFunction(caffe::string(argv[1]))();
+      return GetBrewFunction(caffe8::string(argv[1]))();
 #ifdef WITH_PYTHON_LAYER
     } catch (bp::error_already_set) {
       PyErr_Print();

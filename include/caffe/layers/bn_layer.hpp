@@ -16,7 +16,7 @@
 * @brief Batch Normalization per-channel with scale & shift linear transform.
 *
 */
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 class BNLayer : public Layer<Dtype> {
@@ -68,6 +68,6 @@ class BNLayer : public Layer<Dtype> {
   Dtype var_eps_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  

@@ -5,10 +5,10 @@ Classifier is an image classifier specialization of Net.
 
 import numpy as np
 
-import caffe
+import caffe8
 
 
-class Classifier(caffe.Net):
+class Classifier(caffe8.Net):
     """
     Classifier extends Net for image class prediction
     by scaling, center cropping, or oversampling.

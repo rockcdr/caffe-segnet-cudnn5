@@ -8,7 +8,7 @@
 #include "caffe/data_layers.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 using boost::weak_ptr;
 
@@ -116,4 +116,4 @@ void DataReader::Body::read_one(db::Cursor* cursor, QueuePair* qp) {
   }
 }
 
-}  // namespace caffe
+}  // namespace caffe8

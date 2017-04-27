@@ -3,7 +3,7 @@
 
 #include "caffe/layers/cudnn_relu_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void CuDNNReLULayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,
@@ -41,5 +41,5 @@ CuDNNReLULayer<Dtype>::~CuDNNReLULayer() {
 
 INSTANTIATE_CLASS(CuDNNReLULayer);
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif

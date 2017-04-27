@@ -8,7 +8,7 @@
 #include "caffe/layers/rnn_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void RNNLayer<Dtype>::RecurrentInputBlobNames(vector<string>* names) const {
@@ -233,4 +233,4 @@ void RNNLayer<Dtype>::FillUnrolledNet(NetParameter* net_param) const {
 INSTANTIATE_CLASS(RNNLayer);
 REGISTER_LAYER_CLASS(RNN);
 
-}  // namespace caffe
+}  // namespace caffe8

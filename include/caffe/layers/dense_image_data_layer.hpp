@@ -22,7 +22,7 @@
 #include "caffe/data_transformer.hpp"
 
 
-namespace caffe {
+namespace caffe8 {
 
 
 template <typename Dtype>
@@ -51,6 +51,6 @@ class DenseImageDataLayer : public BasePrefetchingDataLayer<Dtype> {
 };
 
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  

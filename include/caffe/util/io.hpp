@@ -16,7 +16,7 @@
 #define CAFFE_TMP_DIR_RETRIES 100
 #endif
 
-namespace caffe {
+namespace caffe8 {
 
 using ::google::protobuf::Message;
 using ::boost::filesystem::path;
@@ -46,7 +46,7 @@ inline void MakeTempFilename(string* temp_filename) {
     temp_files_subpath = path_string;
   }
   *temp_filename =
-    (temp_files_subpath/caffe::format_int(next_temp_file++, 9)).string();
+    (temp_files_subpath/caffe8::format_int(next_temp_file++, 9)).string();
 }
 
 bool ReadProtoFromTextFile(const char* filename, Message* proto);
@@ -151,6 +151,6 @@ cv::Mat DecodeDatumToCVMat(const Datum& datum, bool is_color);
 void CVMatToDatum(const cv::Mat& cv_img, Datum* datum);
 #endif  // USE_OPENCV
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif   // CAFFE_UTIL_IO_H_

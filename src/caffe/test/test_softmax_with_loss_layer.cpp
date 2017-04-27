@@ -14,7 +14,7 @@
 
 using boost::scoped_ptr;
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename TypeParam>
 class SoftmaxWithLossLayerTest : public MultiDeviceTest<TypeParam> {
@@ -200,4 +200,4 @@ TYPED_TEST(SoftmaxWithLossLayerTest, TestGradientUnnormalized) {
       this->blob_top_vec_, 0);
 }
 
-}  // namespace caffe
+}  // namespace caffe8

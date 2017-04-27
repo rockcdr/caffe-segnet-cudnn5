@@ -5,7 +5,7 @@
 
 #include "caffe/layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 class ParameterLayer : public Layer<Dtype> {
@@ -40,6 +40,6 @@ class ParameterLayer : public Layer<Dtype> {
   { }
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif

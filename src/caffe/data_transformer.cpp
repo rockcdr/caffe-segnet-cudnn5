@@ -8,7 +8,7 @@
 #include "caffe/util/math_functions.hpp"
 #include "caffe/util/rng.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template<typename Dtype>
 DataTransformer<Dtype>::DataTransformer(const TransformationParameter& param,
@@ -519,11 +519,11 @@ template <typename Dtype>
 int DataTransformer<Dtype>::Rand(int n) {
   CHECK(rng_);
   CHECK_GT(n, 0);
-  caffe::rng_t* rng =
-      static_cast<caffe::rng_t*>(rng_->generator());
+  caffe8::rng_t* rng =
+      static_cast<caffe8::rng_t*>(rng_->generator());
   return ((*rng)() % n);
 }
 
 INSTANTIATE_CLASS(DataTransformer);
 
-}  // namespace caffe
+}  // namespace caffe8

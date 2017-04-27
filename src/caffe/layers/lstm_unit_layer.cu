@@ -5,7 +5,7 @@
 #include "caffe/layer.hpp"
 #include "caffe/layers/lstm_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 __device__ Dtype sigmoid(const Dtype x) {
@@ -151,4 +151,4 @@ void LSTMUnitLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 
 INSTANTIATE_LAYER_GPU_FUNCS(LSTMUnitLayer);
 
-}  // namespace caffe
+}  // namespace caffe8

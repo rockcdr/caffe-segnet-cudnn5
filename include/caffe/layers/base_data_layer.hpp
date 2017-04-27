@@ -10,7 +10,7 @@
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/util/blocking_queue.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Provides base for data layers that feed blobs to the Net.
@@ -86,6 +86,6 @@ class BasePrefetchingDataLayer :
   Blob<Dtype> transformed_data_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_DATA_LAYERS_HPP_

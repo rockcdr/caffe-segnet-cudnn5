@@ -17,12 +17,14 @@ if(HAVE_CUDA)
   list(APPEND srcs ${cuda_objs} ${cuda})
 endif()
 
+set(CMAKE_SHARED_LINKER_FLAGS "-L/usr/local/lib -Wl,-Bstatic -lprotobuf -Wl,-Bdynamic -pthread -lpthread ${CMAKE_SHARED_LINKER_FLAGS}")
 add_library(caffe ${srcs})
 target_link_libraries(caffe proto ${Caffe_LINKER_LIBS})
 caffe_default_properties(caffe)
 set_target_properties(caffe PROPERTIES
     VERSION   ${CAFFE_TARGET_VERSION}
     SOVERSION ${CAFFE_TARGET_SOVERSION}
+    OUTPUT_NAME caffe8.so.1.0.0-rc3
     )
 
 # ---[ Tests
@@ -35,6 +37,6 @@ install(TARGETS caffe proto EXPORT CaffeTargets DESTINATION lib)
 
 file(WRITE ${PROJECT_BINARY_DIR}/__init__.py)
 list(APPEND proto_python ${PROJECT_BINARY_DIR}/__init__.py)
-install(PROGRAMS ${proto_python} DESTINATION python/caffe/proto)
+install(PROGRAMS ${proto_python} DESTINATION python/caffe8/proto)
 
 

@@ -21,7 +21,7 @@
 
 
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 DenseImageDataLayer<Dtype>::~DenseImageDataLayer<Dtype>() {
@@ -121,8 +121,8 @@ void DenseImageDataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bott
 
 template <typename Dtype>
 void DenseImageDataLayer<Dtype>::ShuffleImages() {
-  caffe::rng_t* prefetch_rng =
-      static_cast<caffe::rng_t*>(prefetch_rng_->generator());
+  caffe8::rng_t* prefetch_rng =
+      static_cast<caffe8::rng_t*>(prefetch_rng_->generator());
   shuffle(lines_.begin(), lines_.end(), prefetch_rng);
 }
 
@@ -230,4 +230,4 @@ void DenseImageDataLayer<Dtype>::InternalThreadEntry() {
 INSTANTIATE_CLASS(DenseImageDataLayer);
 REGISTER_LAYER_CLASS(DenseImageData);
 
-}  // namespace caffe
+}  // namespace caffe8

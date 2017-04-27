@@ -16,7 +16,7 @@
 #include "caffe/data_transformer.hpp"
 
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 DataLayer<Dtype>::~DataLayer<Dtype>() {
@@ -125,4 +125,4 @@ void DataLayer<Dtype>::InternalThreadEntry() {
 INSTANTIATE_CLASS(DataLayer);
 REGISTER_LAYER_CLASS(Data);
 
-}  // namespace caffe
+}  // namespace caffe8

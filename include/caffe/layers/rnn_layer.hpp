@@ -12,7 +12,7 @@
 #include "caffe/net.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype> class RecurrentLayer;
 
@@ -42,6 +42,6 @@ class RNNLayer : public RecurrentLayer<Dtype> {
   virtual void OutputBlobNames(vector<string>* names) const;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_RNN_LAYER_HPP_

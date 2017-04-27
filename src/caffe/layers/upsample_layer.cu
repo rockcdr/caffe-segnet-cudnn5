@@ -4,7 +4,7 @@
 
 #include "caffe/layers/upsample_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
   __global__ void UpsampleForward(const int nthreads, int in_w, int in_h,
@@ -62,4 +62,4 @@ void UpsampleLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
 INSTANTIATE_LAYER_GPU_FUNCS(UpsampleLayer);
 
 
-}  // namespace caffe
+}  // namespace caffe8

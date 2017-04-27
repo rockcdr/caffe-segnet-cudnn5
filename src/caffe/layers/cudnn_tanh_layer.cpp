@@ -3,7 +3,7 @@
 
 #include "caffe/layers/cudnn_tanh_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void CuDNNTanHLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,
@@ -41,5 +41,5 @@ CuDNNTanHLayer<Dtype>::~CuDNNTanHLayer() {
 
 INSTANTIATE_CLASS(CuDNNTanHLayer);
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif

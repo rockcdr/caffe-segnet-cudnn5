@@ -14,7 +14,7 @@
 #include "caffe/layers/pooling_layer.hpp"
 
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename TypeParam>
 class UpsampleLayerTest : public MultiDeviceTest<TypeParam> {
@@ -320,4 +320,4 @@ TYPED_TEST(UpsampleLayerTest, TestGradient) {
   }
 }
 
-}  // namespace caffe
+}  // namespace caffe8

@@ -7,7 +7,7 @@
 #include "caffe/layer.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 const float kLOG_THRESHOLD = 1e-20;
 
@@ -48,6 +48,6 @@ class LossLayer : public Layer<Dtype> {
   }
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_LOSS_LAYER_HPP_

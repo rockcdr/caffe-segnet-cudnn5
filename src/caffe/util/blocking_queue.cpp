@@ -6,7 +6,7 @@
 #include "caffe/parallel.hpp"
 #include "caffe/util/blocking_queue.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template<typename T>
 class BlockingQueue<T>::sync {
@@ -93,4 +93,4 @@ template class BlockingQueue<shared_ptr<DataReader::QueuePair> >;
 template class BlockingQueue<P2PSync<float>*>;
 template class BlockingQueue<P2PSync<double>*>;
 
-}  // namespace caffe
+}  // namespace caffe8

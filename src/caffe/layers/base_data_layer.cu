@@ -2,7 +2,7 @@
 
 #include "caffe/data_layers.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void BasePrefetchingDataLayer<Dtype>::Forward_gpu(
@@ -27,4 +27,4 @@ void BasePrefetchingDataLayer<Dtype>::Forward_gpu(
 
 INSTANTIATE_LAYER_GPU_FORWARD(BasePrefetchingDataLayer);
 
-}  // namespace caffe
+}  // namespace caffe8

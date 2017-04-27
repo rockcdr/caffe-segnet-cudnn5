@@ -35,7 +35,7 @@
 
 
 #ifdef USE_OPENCV
-using namespace caffe;  // NOLINT(build/namespaces)
+using namespace caffe8;  // NOLINT(build/namespaces)
 using std::string;
 
 

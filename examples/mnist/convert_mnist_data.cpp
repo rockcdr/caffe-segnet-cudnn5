@@ -29,7 +29,7 @@
 
 #if defined(USE_LEVELDB) && defined(USE_LMDB)
 
-using namespace caffe;  // NOLINT(build/namespaces)
+using namespace caffe8;  // NOLINT(build/namespaces)
 using boost::scoped_ptr;
 using std::string;
 
@@ -92,7 +92,7 @@ void convert_dataset(const char* image_filename, const char* label_filename,
     label_file.read(&label, 1);
     datum.set_data(pixels, rows*cols);
     datum.set_label(label);
-    string key_str = caffe::format_int(item_id, 8);
+    string key_str = caffe8::format_int(item_id, 8);
     datum.SerializeToString(&value);
 
     txn->Put(key_str, value);

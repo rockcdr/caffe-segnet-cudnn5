@@ -13,7 +13,7 @@
 
 #include "caffe/test/test_caffe_main.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 class IOTest : public ::testing::Test {};
 
@@ -420,5 +420,5 @@ TEST_F(IOTest, TestDecodeDatumToCVMatContentNative) {
   }
 }
 
-}  // namespace caffe
+}  // namespace caffe8
 #endif  // USE_OPENCV

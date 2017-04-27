@@ -9,7 +9,7 @@
 
 #include "caffe/util/db.hpp"
 
-namespace caffe { namespace db {
+namespace caffe8 { namespace db {
 
 inline void MDB_CHECK(int mdb_status) {
   CHECK_EQ(mdb_status, MDB_SUCCESS) << mdb_strerror(mdb_status);
@@ -90,7 +90,7 @@ class LMDB : public DB {
 };
 
 }  // namespace db
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_UTIL_DB_LMDB_HPP
 #endif  // USE_LMDB

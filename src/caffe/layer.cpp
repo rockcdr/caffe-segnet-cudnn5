@@ -1,7 +1,7 @@
 #include <boost/thread.hpp>
 #include "caffe/layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 template <typename Dtype>
 void Layer<Dtype>::InitMutex() {
@@ -24,4 +24,4 @@ void Layer<Dtype>::Unlock() {
 
 INSTANTIATE_CLASS(Layer);
 
-}  // namespace caffe
+}  // namespace caffe8

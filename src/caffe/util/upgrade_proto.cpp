@@ -10,7 +10,7 @@
 #include "caffe/util/io.hpp"
 #include "caffe/util/upgrade_proto.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 bool NetNeedsUpgrade(const NetParameter& net_param) {
   return NetNeedsV0ToV1Upgrade(net_param) || NetNeedsV1ToV2Upgrade(net_param)
@@ -1097,4 +1097,4 @@ void ReadSolverParamsFromTextFileOrDie(const string& param_file,
   UpgradeSolverAsNeeded(param_file, param);
 }
 
-}  // namespace caffe
+}  // namespace caffe8

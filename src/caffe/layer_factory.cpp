@@ -31,7 +31,7 @@
 #include "caffe/layers/python_layer.hpp"
 #endif
 
-namespace caffe {
+namespace caffe8 {
 
 // Get convolution layer according to engine.
 template <typename Dtype>
@@ -264,4 +264,4 @@ REGISTER_LAYER_CREATOR(Python, GetPythonLayer);
 
 // Layers that use their constructor as their default creator should be
 // registered in their corresponding cpp files. Do not register them here.
-}  // namespace caffe
+}  // namespace caffe8

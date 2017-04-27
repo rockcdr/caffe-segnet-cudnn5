@@ -45,7 +45,7 @@ inline const char* cudnnGetErrorString(cudnnStatus_t status) {
   return "Unknown cudnn status";
 }
 
-namespace caffe {
+namespace caffe8 {
 
 namespace cudnn {
 
@@ -147,7 +147,7 @@ inline void createActivationDescriptor(cudnnActivationDescriptor_t* activ_desc,
 
 }  // namespace cudnn
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // USE_CUDNN
 #endif  // CAFFE_UTIL_CUDNN_H_

@@ -10,7 +10,7 @@
 #include "caffe/util/blocking_queue.hpp"
 #include "caffe/util/db.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Reads data from a source to queues available to data layers.
@@ -77,6 +77,6 @@ class DataReader {
 DISABLE_COPY_AND_ASSIGN(DataReader);
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_DATA_READER_HPP_

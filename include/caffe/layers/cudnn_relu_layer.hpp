@@ -10,7 +10,7 @@
 #include "caffe/layers/neuron_layer.hpp"
 #include "caffe/layers/relu_layer.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 #ifdef USE_CUDNN
 /**
@@ -41,6 +41,6 @@ class CuDNNReLULayer : public ReLULayer<Dtype> {
 };
 #endif
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_CUDNN_RELU_LAYER_HPP_

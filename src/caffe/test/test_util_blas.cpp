@@ -8,7 +8,7 @@
 
 #include "caffe/test/test_caffe_main.hpp"
 
-namespace caffe {
+namespace caffe8 {
 
 extern cudaDeviceProp CAFFE_TEST_CUDA_PROP;
 
@@ -127,6 +127,6 @@ TYPED_TEST(GemmTest, TestGemvCPUGPU) {
   }
 }
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CPU_ONLY

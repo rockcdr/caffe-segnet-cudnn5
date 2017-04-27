@@ -7,7 +7,7 @@
 #include "caffe/common.hpp"
 #include "caffe/proto/caffe.pb.h"
 
-namespace caffe {
+namespace caffe8 {
 
 /**
  * @brief Applies common transformations to the input data, such as
@@ -149,7 +149,7 @@ class DataTransformer {
   vector<Dtype> mean_values_;
 };
 
-}  // namespace caffe
+}  // namespace caffe8
 
 #endif  // CAFFE_DATA_TRANSFORMER_HPP_
 
